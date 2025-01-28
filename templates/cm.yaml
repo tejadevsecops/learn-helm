@@ -1,7 +1,7 @@
- {{- define "mychart.labels" }}
+{{- define "mychart.labels" }}
 generator: helm
 date: {{ now | htmlDate }}
- {{- end }}
+{{- end }}
 
 apiVersion: v1
 kind: ConfigMap

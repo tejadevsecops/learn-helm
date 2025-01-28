@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.name }}
-   {{- template "mychart.labels"}}
+{{- include "mychart.labels" . | indent 4}}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.name }}
+{{- include "mychart.labels" . | indent 6}}
   template:
     metadata:
       labels:

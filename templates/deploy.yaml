@@ -1,9 +1,14 @@
+{{- define "mychart.labels" }}
+  labels:
+    generator: helm
+    date: {{ now | htmlDate }}
+{{- end }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.name }}
-  labels:
-    app: {{ .Values.name }}
+  {{- template "mychart.labels"}}
 spec:
   replicas: 1
   selector:
